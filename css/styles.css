@@ -9,7 +9,7 @@
 }
 
 .navbar {
-  background-color: #353232;
+  background-color: #1d2433;
   padding: 1rem; /*rem es una unidad de medida que se ajusta al tamaño de la fuente del elemento padre*/
   position: fixed;
   top: 0;
@@ -38,7 +38,7 @@
 }
 
 .nav-links a.active {
-  background-color: #a66ec5;
+  background-color: #875f98;
 }
 #bienvenida{
   margin-top: 30px;
@@ -46,7 +46,7 @@
 
 }
 h1, h2, h3 {
-  border-bottom: 2px solid #a66ec5;
+  border-bottom: 2px solid #875f98;
   padding-bottom: 0.5rem;
 }
 .contenido {
