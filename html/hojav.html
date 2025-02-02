@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles-navbar.css" />
+    <link rel="stylesheet" href="../css/styles-hojav.css" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +22,70 @@
         <nav class="navbar">
             <ul class="nav-links">
                 <li><a href="index.html">Bienvenida</a></li>
-                <li><a href="datosB.html" >Datos Biográficos</a></li>
+                <li><a href="datosB.html">Datos Biográficos</a></li>
                 <li><a href="hojav.html" aria-current="page" class="active">Hoja de Vida</a></li>
                 <li><a href="intereses.html">Intereses</a></li>
             </ul>
         </nav>
     </header>
+
+    <main>
+        <section class="hoja-de-vida">
+            <h1>Mi Hoja de Vida</h1>
+
+            <nav class="indice">
+                <h2>Índice</h2>
+                <ul>
+                    <li><a href="#experiencia">Experiencia Laboral</a></li>
+                    <li><a href="#estudios">Estudios</a></li>
+                    <li><a href="#premios">Premios y Reconocimientos</a></li>
+                </ul>
+            </nav>
+
+            <section id="experiencia" class="section-container">
+                <h2>Experiencia Laboral</h2>
+                <div class="subsection">
+                    <h3>Monitoría departamento de ingeniería de sistemas</h3>
+                    <ul>
+                        <li>Acompañamiento en resolución de problemas</li>
+                        <li>Elaboración de material de apoyo</li>
+                        <li>Enseñanza básica en fundamentos para la programación</li>
+                    </ul>
+                    <div class="imagen-exp">
+                        <img src="http://127.0.0.1:5500/artistas/olivia.jpeg" alt="Desarrollador Senior" />
+                        <img src="http://127.0.0.1:5500/artistas/olivia.jpeg" alt="Desarrollador Senior" />
+                        <img src="http://127.0.0.1:5500/artistas/olivia.jpeg" alt="Desarrollador Senior" />
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="estudios" class="section-container">
+                <h2>Estudios</h2>
+                <div class="subsection">
+                    <h3>Educación Formal</h3>
+                    <ol>
+                        <li>Maestría en Ingeniería de Software (2020-2022)</li>
+                        <li>Ingeniería en Sistemas (2015-2019)</li>
+                        <li>Técnico en Programación (2013-2014)</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="premios" class="section-container">
+                <h2>Premios y Reconocimientos</h2>
+                <div class="subsection">
+                    <h3>Logros Destacados</h3>
+                    <ul>
+                        <li>Premio a la Innovación Tecnológica 2022</li>
+                        <li>Reconocimiento por Excelencia Académica</li>
+                        <li>Mejor Proyecto del Año 2021</li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+
+    </main>
 
     <footer>
         <p>© 2024 Tatiana Vivas. Todos los derechos reservados.</p>
