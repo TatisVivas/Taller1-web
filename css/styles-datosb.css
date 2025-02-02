@@ -1,0 +1,92 @@
+.datos-biograficos {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.datos-biograficos > h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    position: relative;
+}
+
+
+.tabla-datos {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 4rem;
+}
+
+.tabla-datos table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+}
+
+.tabla-datos th {
+    background-color: #1d2433;
+    color: white;
+    padding: 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tabla-datos td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.tabla-datos tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-datos tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.tabla-datos td:first-child {
+    font-weight: 600;
+    color: #1d2433;
+    width: 40%;
+}
+
+.tabla-datos tr:hover {
+    background-color: #f0f4f8;
+    transition: background-color 0.2s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .datos-biograficos {
+        padding: 5%;
+    }
+    
+    .tabla-datos table {
+        font-size: 0.95rem;
+    }
+    
+    .tabla-datos td, .tabla-datos th {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabla-datos {
+        margin: 0 -5%;
+        border-radius: 0;
+    }
+    
+    .tabla-datos table {
+        font-size: 0.9rem;
+    }
+    
+    .tabla-datos td, .tabla-datos th {
+        padding: 0.6rem;
+    }
+}
