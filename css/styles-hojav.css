@@ -91,11 +91,11 @@ ol li::marker {
     margin-right: 2em;
 }
 
-.imagen-exp{
+.imagenes{
     display: flex;
     justify-content: center;
 }
 
-.imagen-exp img {
+.imagenes img {
     margin: 10px; /* Add margin to create spacing between images */
 }
