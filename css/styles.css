@@ -1,3 +1,6 @@
+body,header, main, footer {
+    font-family: "Bricolage Grotesque", serif;
+}
 .navbar {
     font-family: "Bricolage Grotesque", serif;
     font-optical-sizing: auto;
@@ -127,10 +130,6 @@ footer p {
 }
 
 /*Para la bienvenida*/
-* {
-    font-family: "Bricolage Grotesque", serif;
-}
-
 .contenido {
     margin: 2rem 0;
     align-items: left;
