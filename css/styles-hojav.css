@@ -97,5 +97,8 @@ ol li::marker {
 }
 
 .imagenes img {
-    margin: 10px; /* Add margin to create spacing between images */
+    margin: 10px;
+    object-fit: cover; 
+    width: 20%;
+    height: auto;
 }
