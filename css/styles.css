@@ -1,0 +1,352 @@
+.navbar {
+    font-family: "Bricolage Grotesque", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    background-color: #1d2433;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+h1,
+h2,
+h3 {
+    border-bottom: 2px solid #99bfc4;
+    padding-bottom: 0.5rem;
+}
+
+h1 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    position: relative;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #545056;
+}
+
+.nav-links a[aria-current="page"] {
+    background-color: #875f98;
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-bottom: 100px;
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    body {
+        padding-top: 200px;
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d2433;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    gap: 2rem;
+    z-index: 1000;
+}
+
+footer p {
+    flex: 1;
+    text-align: center;
+}
+
+#redes-sociales {
+    display: flex;
+    gap: 1rem;
+    margin-right: 2rem;
+}
+
+#redes-sociales img {
+    height: 26px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+#redes-sociales img:hover {
+    transform: scale(1.1);
+}
+
+/*Para la bienvenida*/
+* {
+    font-family: "Bricolage Grotesque", serif;
+}
+
+.contenido {
+    margin: 2rem 0;
+    align-items: left;
+}
+
+.imagenflot {
+    width: 300px;
+    height: 300px;
+    float: left;
+    padding: 1%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    border: 1px solid black;
+    margin-right: 2%;
+}
+
+.imagenflot:hover {
+    transform: scale(1.05);
+}
+
+.texto-bienvenida {
+    display: inline;
+    padding: 1;
+    font-size: 1.5em;
+    color: #000000;
+}
+
+/*Para los datos Biográficos*/
+.datos-biograficos {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabla-datos {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 4rem;
+    font-family: "Forum", serif;
+}
+
+.tabla-datos table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+}
+
+.tabla-datos th {
+    background-color: #1d2433;
+    color: white;
+    padding: 1.2rem;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.tabla-datos td {
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid #edf2f7;
+    font-size: 22px;
+}
+
+.tabla-datos tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-datos tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.tabla-datos tr:nth-child(odd) {
+    background-color: #dee8e4;
+}
+
+.tabla-datos td:first-child {
+    font-weight: 1000;
+    color: #1d2433;
+    width: 40%;
+}
+
+.tabla-datos tr:hover {
+    background-color: #f0f4f8;
+    transition: background-color 0.2s ease;
+}
+
+@media (max-width: 768px) {
+    .datos-biograficos {
+        padding: 5%;
+    }
+
+    .tabla-datos table {
+        font-size: 0.95rem;
+    }
+
+    .tabla-datos td,
+    .tabla-datos th {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabla-datos {
+        margin: 0 -5%;
+        border-radius: 0;
+    }
+
+    .tabla-datos table {
+        font-size: 0.9rem;
+    }
+
+    .tabla-datos td,
+    .tabla-datos th {
+        padding: 0.6rem;
+    }
+}
+
+/*Para la hoja de vida*/
+.hoja-de-vida>h1 {
+    font-family: "Bricolage Grotesque", serif;
+    text-align: center;
+    color: #444;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    position: relative;
+}
+
+.indice {
+    background: linear-gradient(50deg, #ffffff 0%, #e0e7ff 100%);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    border: 1px solid rgb(131, 135, 140);
+    font-size: 20px;
+}
+
+.indice ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.indice a {
+    color: #3498db;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+.indice a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+main ul li::before {
+    content: "•";
+    color: #6ca3da;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: 1em;
+}
+
+.section-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgb(131, 135, 140);
+}
+
+/*poner degradado en cada seccion*/
+#experiencia {
+    background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 100%);
+}
+
+#estudios {
+    background: linear-gradient(50deg, #ffffff 0%, #e0e7ff 100%);
+}
+
+#premios {
+    background: linear-gradient(135deg, #e0e7ff 0%, #ffffff 100%);
+}
+
+ol {
+    padding-left: 50px;
+}
+
+ol li {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+ol li::marker {
+    color: #278aae;
+    font-weight: bold;
+}
+
+.subsection h3 {
+    margin-left: 2em; /* Align with bullet points */
+    margin-right: 2em;
+}
+
+.imagenes-hv {
+    display: flex;
+    justify-content: center;
+}
+
+.imagenes-hv img {
+    margin: 10px;
+    object-fit: cover;
+    width: 20%;
+    height: auto;
+}
