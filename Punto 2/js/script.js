@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
 
     const price = Number(document.getElementById('price').value.trim());
-    if (isNaN(price)) {
+    if (isNaN(price)) { //valida si el precio es un numero
       alert('Por favor, introduce un precio válido.');
       return;
     }
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Función para renderizar productos
+// Renderiza productos en la página, recibe un array de productos y los muestra en el DOM
 function renderProducts(products) {
   const productsContainer = document.getElementById('products-container');
   productsContainer.innerHTML = '';
