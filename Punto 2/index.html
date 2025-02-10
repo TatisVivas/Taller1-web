@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple. Tus productos tax free</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <section class="header-content">
+            <div class="brand">
+                <img src="https://storage.comprasmartphone.com/brands/apple.png" alt="Logo Apple Blanco" class="logo">
+                <h1>Apple</h1>
+            </div>
+            <article class="cart-wrapper">
+                <div class="cart-icon">🛒</div>
+                <div class="cart-dropdown">
+                    <table id="cart-items">
+                        <thead> <!-- Encabezado de la tabla -->
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <button id="clear-cart">Vaciar carrito</button>
+                </div>
+            </article>
+        </section>
+    </header>
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="intro-text">
+            <h2>Bienvenido a Apple Tax Free</h2>
+            <p>Descubre nuestros productos tax free de Apple, la tienda más grande de tecnología en el mundo. Compra iPhones, iPads, Macs y mucho más, sin preocuparte por impuestos.</p>
+        </div>
+        <div class="intro-image">
+            <img src="https://1000marcas.net/wp-content/uploads/2019/11/Apple-logo.png" alt="Logo Apple negro">
+        </div>
+    </section>
+    
+
+    <!-- Tienda -->
+    <main>
+        <section class="store">
+            <h2>Nuestra Tienda</h2>
+            <div id="products-container" class="products-grid"></div>
+        </section>
+
+        <!-- Formulario para agregar artículos -->
+        <section class="add-product">
+            <h2>Agregar Nuevo Artículo</h2>
+            <form id="add-product-form">
+                <div class="form-group">
+                    <label for="name">Nombre del artículo:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Precio:</label>
+                    <input type="number" id="price" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">URL de la imagen:</label>
+                    <input type="url" id="image" required>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Almacentamiento:</label>
+                    <input type="text" id="storage" required>
+                </div>
+                <div class="form-group">
+                    <label for="platform">Color:</label>
+                    <input type="text" id="color" required>
+                </div>
+                <div class="form-group">
+                    <label for="developer">Tamaño:</label>
+                    <input type="text" id="size" required>
+                </div>
+                <div class="form-group">
+                    <label for="releaseYear">Año de lanzamiento:</label>
+                    <input type="number" id="releaseYear" required>
+                </div>
+                <button type="submit">Agregar artículo</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
