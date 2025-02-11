@@ -5,22 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartIcon = document.querySelector('.cart-icon');
     const cartDropdown = document.querySelector('.cart-dropdown');
 
-    // Si se hace clic en el icono del carrito, se muestra sin ocultarse automáticamente
     cartIcon.addEventListener('click', (event) => {
-        event.stopPropagation(); // Evita que el clic se propague y lo cierre de inmediato
-        showCartDropdown(false);
+        event.stopPropagation(); // Evita que el clic se propague y cierre el menú
+        showCartDropdown(false); // Mostrar el carrito sin ocultarlo automáticamente
     });
 
     // Ocultar el carrito si el usuario hace clic fuera
     document.addEventListener('click', (event) => {
         if (!cartDropdown.contains(event.target) && !cartIcon.contains(event.target)) {
-            cartDropdown.style.opacity = '0';
-            setTimeout(() => {
-                cartDropdown.style.display = 'none';
-            }, 300);
+            cartDropdown.classList.remove('show');
         }
     });
 });
+
 
 
 
@@ -44,8 +41,9 @@ function addToCart(productId) {
     }
 
     updateCartDisplay();
-    showCartDropdown(); // Muestra el carrito por 5 segundos
+    showCartDropdown(true); // Muestra el carrito durante 5 segundos
 }
+
 
 
 
@@ -92,16 +90,16 @@ function showCartDropdown(autoHide = true) {
     // Muestra el carrito
     cartDropdown.style.display = 'block';
     cartDropdown.style.opacity = '1';
-
     // Si se debe ocultar automáticamente después de 5 segundos
     if (autoHide) {
         setTimeout(() => {
             cartDropdown.style.opacity = '0';
             setTimeout(() => {
                 cartDropdown.style.display = 'none';
-            }, 300);
-        }, 5000); // 5 segundos
+            }, 300); // Pequeño retraso para animación de opacidad
+        }, 5000);
     }
 }
+
 
     

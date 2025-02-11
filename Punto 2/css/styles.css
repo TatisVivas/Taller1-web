@@ -87,8 +87,8 @@ body {
   color: var(--text-color);
   z-index: 1000;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s;
-}
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s;}
 
 .cart-wrapper:hover .cart-dropdown {
   display: block;
@@ -357,5 +357,6 @@ button[type="submit"]:hover {
   .cart-dropdown.show {
     visibility: visible;
     opacity: 1;
+    transform: translateY(0);
   }
 }
