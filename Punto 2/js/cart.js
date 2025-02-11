@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cartIcon.addEventListener('click', (event) => {
         event.stopPropagation(); // Evita que el clic se propague y cierre el menú
-        toggleCartDropdown(); // Toggle the cart dropdown visibility
+        toggleCartDropdown(); // Muestra u oculta el carrito
     });
 
     // Ocultar el carrito si el usuario hace clic fuera
@@ -43,7 +43,7 @@ function addToCart(productId) {
 
 // Función para actualizar la visualización del carrito
 function updateCartDisplay() {
-    const cartBody = document.querySelector('#cart-items tbody');
+    const cartBody = document.querySelector('#cart-items tbody'); // Selecciona el cuerpo de la tabla
     cartBody.innerHTML = '';
     
     cart.forEach(item => {
@@ -59,8 +59,9 @@ function updateCartDisplay() {
 
     // Agregar fila para el total
     const totalRow = document.createElement('tr');
+    // colspan="3" para que ocupe 3 columnas
     totalRow.innerHTML = `
-        <td colspan="3">Total</td>
+        <td colspan="3">Total</td> 
         <td>$${calculateTotal().toLocaleString()}</td>
     `;
     cartBody.appendChild(totalRow);
@@ -68,6 +69,7 @@ function updateCartDisplay() {
 
 // Función para calcular el total del carrito
 function calculateTotal() {
+    //reduce: recorre el array cart y suma el precio de cada producto multiplicado por la cantidad
     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
 }
 
@@ -84,19 +86,19 @@ function showCartDropdown(autoHide = true) {
     // Muestra el carrito
     cartDropdown.style.display = 'block';
     cartDropdown.style.opacity = '1';
-    // Si se debe ocultar automáticamente después de 5 segundos
+    // Si se debe ocultar automáticamente después de 2 segundos
     if (autoHide) {
         setTimeout(() => {
             cartDropdown.style.opacity = '0';
             setTimeout(() => {
                 cartDropdown.style.display = 'none';
             }, 300); // Pequeño retraso para animación de opacidad
-        }, 5000);
+        }, 2000);
     }
 }
 
-// Función para alternar la visibilidad del carrito
-function toggleCartDropdown() {
+// Función para alternar la visibilidad del carrito, al dar click una vez se muestra y al dar click otra vez se oculta
+function toggleCartDropdown() { //como un tocken para mostrar u ocultar el carrito
     const cartDropdown = document.querySelector('.cart-dropdown');
     if (cartDropdown.style.display === 'block') {
         cartDropdown.style.display = 'none';
