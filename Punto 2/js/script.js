@@ -1,13 +1,14 @@
 // Inicialización de la aplicación
+//Función que se ejecuta al cargar el DOM y se muestran los productos iniciales, usando la función renderProducts que se encuntra en el archivo js/products.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Renderizar productos iniciales
-  renderProducts(initialProducts);
+  // Renderizar productos iniciales, que es un array de productos que se encuentra en products.js
+  renderAllProducts(initialProducts);
 
   // Event listener para agregar productos al carrito
   document.getElementById('products-container').addEventListener('click', (e) => {
-    if (e.target.classList.contains('add-to-cart')) {
-      const productId = parseInt(e.target.dataset.id);
-      addToCart(productId);
+    if (e.target.classList.contains('add-to-cart')) {//elemento que fue clickeado
+      const productId = parseInt(e.target.dataset.id); //obtiene el id del producto
+      addToCart(productId); //agrega el producto al carrito con el id obtenido, en la función en cart.js
     }
   });
 
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Event listener para el formulario de agregar producto
   document.getElementById('add-product-form').addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault(); //prevención de la recarga de la página
 
     const price = Number(document.getElementById('price').value.trim());
     if (isNaN(price)) { //valida si el precio es un numero
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     initialProducts.push(newProduct);
-    renderProducts(initialProducts);
+    renderAllProducts(initialProducts);
 
     // Limpiar formulario
     e.target.reset();
@@ -48,17 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Renderiza productos en la página, recibe un array de productos y los muestra en el DOM
-function renderProducts(products) {
+
+//A diferencia de la función renderInitialProducts que se encuentra en products.js, esta función recibe un array de productos y los muestra en el DOM, aún después de agregar un nuevo producto y de haberse renderizado los productos iniciales
+function renderAllProducts(products) {
   const productsContainer = document.getElementById('products-container');
-  productsContainer.innerHTML = '';
+  productsContainer.innerHTML = ''; // Limpiar el contenedor para evitar duplicados
 
   products.forEach(product => {
+    // Crear una tarjeta de producto en un div
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
+    //Detalles del producto
     productCard.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
-            <p>$${product.price.toLocaleString()}</p>
+            <p>$${product.price.toLocaleString()} USD</p>
             <p>Almacenamiento: ${product.storage}</p>
             <p>Color: ${product.color}</p>
             <p>Tamaño: ${product.size}</p>

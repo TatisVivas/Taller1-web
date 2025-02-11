@@ -86,8 +86,8 @@ function createProductCard(product) {
     return card;
 }
 
-// Función para renderizar productos
-function renderProducts(products) {
+// Función para renderizar productos iniciales, apenas cargue la página
+function renderInitialProducts(products) {
     const container = document.getElementById('products-container');
     container.innerHTML = '';
     products.forEach(product => {
