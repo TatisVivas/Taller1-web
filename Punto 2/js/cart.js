@@ -24,15 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Función para agregar producto al carrito
 function addToCart(productId) {
-    const product = initialProducts.find(p => p.id === productId);
-    if (!product) return;
+    const product = initialProducts.find(p => p.id === productId); // Busca el producto por su id
+    if (!product) return; // Si no se encuentra el producto, no hace nada
 
     const existingItem = cart.find(item => item.id === productId);
     
-    if (existingItem) {
+    if (existingItem) { // Si el producto ya estaba en el carrito, aumenta la cantidad
         existingItem.quantity += 1;
     } else {
-        cart.push({
+        cart.push({ // Si no estaba, lo agrega al carrito
             id: product.id,
             name: product.name,
             price: product.price,
