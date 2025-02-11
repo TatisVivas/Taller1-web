@@ -1,22 +1,26 @@
 // Estado del carrito
 let cart = [];
 
+
 document.addEventListener('DOMContentLoaded', () => {
-    const cartIcon = document.querySelector('.cart-icon');
+    const cartWrapper = document.querySelector('.cart-wrapper');
     const cartDropdown = document.querySelector('.cart-dropdown');
 
-    cartIcon.addEventListener('click', (event) => {
-        event.stopPropagation(); // Evita que el clic se propague y cierre el menú
-        toggleCartDropdown(); // Muestra u oculta el carrito
+    // Muestra el carrito cuando el usuario pasa el mouse sobre el icono
+    cartWrapper.addEventListener('mouseenter', () => {
+        cartDropdown.style.display = 'block';
+        cartDropdown.style.opacity = '1';
     });
 
-    // Ocultar el carrito si el usuario hace clic fuera
-    document.addEventListener('click', (event) => {
-        if (!cartDropdown.contains(event.target) && !cartIcon.contains(event.target)) {
-            cartDropdown.classList.remove('show');
-        }
+    // Oculta el carrito cuando el mouse sale
+    cartWrapper.addEventListener('mouseleave', () => {
+        cartDropdown.style.opacity = '0';
+        setTimeout(() => {
+            cartDropdown.style.display = 'none';
+        }, 300);
     });
 });
+
 
 // Función para agregar producto al carrito
 function addToCart(productId) {
@@ -98,7 +102,7 @@ function showCartDropdown(autoHide = true) {
 }
 
 // Función para alternar la visibilidad del carrito, al dar click una vez se muestra y al dar click otra vez se oculta
-function toggleCartDropdown() { //como un tocken para mostrar u ocultar el carrito
+function toggleCartDropdown() { //como un token
     const cartDropdown = document.querySelector('.cart-dropdown');
     if (cartDropdown.style.display === 'block') {
         cartDropdown.style.display = 'none';
