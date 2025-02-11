@@ -20,10 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault(); //prevención de la recarga de la página
 
     const price = Number(document.getElementById('price').value.trim());
-    if (isNaN(price)) { //valida si el precio es un numero
-      alert('Por favor, introduce un precio válido.');
-      return;
-    }
     if (price < 1000) {
       alert('El precio debe ser mayor a $1.000');
       return;

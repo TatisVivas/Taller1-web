@@ -86,10 +86,13 @@ body {
   min-width: 300px;
   color: var(--text-color);
   z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
 }
 
 .cart-wrapper:hover .cart-dropdown {
   display: block;
+  opacity: 1;
 }
 
 
@@ -349,5 +352,10 @@ button[type="submit"]:hover {
       width: 100%;
       max-height: 80vh;
       overflow-y: auto;
+
+  }
+  .cart-dropdown.show {
+    visibility: visible;
+    opacity: 1;
   }
 }

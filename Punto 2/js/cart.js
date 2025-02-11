@@ -2,9 +2,27 @@
 let cart = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const cartSection = document.querySelector('#cart-section');
-    cartSection.style.display = 'none';
+    const cartIcon = document.querySelector('.cart-icon');
+    const cartDropdown = document.querySelector('.cart-dropdown');
+
+    // Si se hace clic en el icono del carrito, se muestra sin ocultarse automáticamente
+    cartIcon.addEventListener('click', (event) => {
+        event.stopPropagation(); // Evita que el clic se propague y lo cierre de inmediato
+        showCartDropdown(false);
+    });
+
+    // Ocultar el carrito si el usuario hace clic fuera
+    document.addEventListener('click', (event) => {
+        if (!cartDropdown.contains(event.target) && !cartIcon.contains(event.target)) {
+            cartDropdown.style.opacity = '0';
+            setTimeout(() => {
+                cartDropdown.style.display = 'none';
+            }, 300);
+        }
+    });
 });
+
+
 
 // Función para agregar producto al carrito
 function addToCart(productId) {
@@ -24,10 +42,12 @@ function addToCart(productId) {
             quantity: 1
         });
     }
-    
+
     updateCartDisplay();
-    showCartSection(); // Mostrar la sección del carrito
+    showCartDropdown(); // Muestra el carrito por 5 segundos
 }
+
+
 
 // Función para actualizar la visualización del carrito
 function updateCartDisplay() {
@@ -66,7 +86,22 @@ function clearCart() {
 }
 
 // Función para mostrar la sección del carrito
-function showCartSection() {
-    const cartSection = document.querySelector('#cart-section');
-    cartSection.style.display = 'block';
+function showCartDropdown(autoHide = true) {
+    const cartDropdown = document.querySelector('.cart-dropdown');
+
+    // Muestra el carrito
+    cartDropdown.style.display = 'block';
+    cartDropdown.style.opacity = '1';
+
+    // Si se debe ocultar automáticamente después de 5 segundos
+    if (autoHide) {
+        setTimeout(() => {
+            cartDropdown.style.opacity = '0';
+            setTimeout(() => {
+                cartDropdown.style.display = 'none';
+            }, 300);
+        }, 5000); // 5 segundos
+    }
 }
+
+    
