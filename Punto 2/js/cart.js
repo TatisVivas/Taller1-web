@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cartIcon.addEventListener('click', (event) => {
         event.stopPropagation(); // Evita que el clic se propague y cierre el menú
-        showCartDropdown(false); // Mostrar el carrito sin ocultarlo automáticamente
+        toggleCartDropdown(); // Toggle the cart dropdown visibility
     });
 
     // Ocultar el carrito si el usuario hace clic fuera
@@ -17,9 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-
-
 
 // Función para agregar producto al carrito
 function addToCart(productId) {
@@ -43,9 +40,6 @@ function addToCart(productId) {
     updateCartDisplay();
     showCartDropdown(true); // Muestra el carrito durante 5 segundos
 }
-
-
-
 
 // Función para actualizar la visualización del carrito
 function updateCartDisplay() {
@@ -101,5 +95,15 @@ function showCartDropdown(autoHide = true) {
     }
 }
 
+// Función para alternar la visibilidad del carrito
+function toggleCartDropdown() {
+    const cartDropdown = document.querySelector('.cart-dropdown');
+    if (cartDropdown.style.display === 'block') {
+        cartDropdown.style.display = 'none';
+    } else {
+        cartDropdown.style.display = 'block';
+        cartDropdown.style.opacity = '1';
+    }
+}
 
-    
+
