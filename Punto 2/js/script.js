@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Limpiar formulario
     //e significa evento, target es el elemento que disparó el evento, reset es un método que limpia los campos del formulario
     //se usa así porque el formulario es el target del evento submit
+    
     e.target.reset();
   });
 });
